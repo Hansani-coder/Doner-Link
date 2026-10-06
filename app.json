@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "DonorLink",
+    "slug": "DonorLink",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/donorlink-icon.png",
+    "scheme": "donorlink",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.donorlink.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "DonorLink uses your approximate location to show nearby blood requests and donors. It is never shared as an exact address.",
+        "NSPhotoLibraryUsageDescription": "DonorLink needs photo access so you can upload a profile photo or a verification document.",
+        "NSCameraUsageDescription": "DonorLink uses the camera to photograph verification documents."
+      }
+    },
+    "android": {
+      "package": "com.donorlink.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/donorlink-adaptive-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "dark": {
+            "backgroundColor": "#0B1220"
+          },
+          "image": "./assets/images/donorlink-splash.png",
+          "imageWidth": 160
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "DonorLink uses your approximate location to show nearby blood requests and donors."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "DonorLink needs photo access so you can upload a profile photo or a verification document.",
+          "cameraPermission": "DonorLink uses the camera to photograph verification documents."
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
